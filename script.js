@@ -57,7 +57,7 @@ function createNewMeme(content, image, category, color) {
     <p class="content">${content}</p>
     <span class="category" style="background-color: ${color};">${category}</span>
   `
-  memeWrapper.insertBefore(newMeme, memeWrapper.children[0])
+  memeWrapper.insertBefore(newMeme, memeWrapper.firstElementChild)
   displayAlert()
 }
 
@@ -137,13 +137,14 @@ function checkProfile(name, pwd) {
 
     // accountBtn.nextElementSibling.classList.toggle('hidden')
     modal.classList.toggle('hidden')
+    p.textContent = ""
   } else {
     console.log('please log in again')
     
     p.textContent = 'Username or password is not correct'
     // modalForm.appendChild(p)
   }
-  p.textContent = ""
+  
   // console.log(modalForm)
   return true
 }
